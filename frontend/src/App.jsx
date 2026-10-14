@@ -12,9 +12,20 @@ function App() {
   return (
     <div>
       <CreateTodo/>
-      <Todos/>
+      <Todos todos = {[
+        {
+          title: "Code react",
+          description: "Complete components, state, todoApp",
+          completed: false
+        },
+        {
+          title: "Code FastAPI",
+          description: "Complete Langgraph, state, RAG",
+          completed: true
+        }
+      ]}/>
     </div>
   )  
 } 
 
-export default App;
+export default App; 

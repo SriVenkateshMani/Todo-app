@@ -2,10 +2,13 @@ const express = require("express");
 const  todoParser  = require("./validate")
 const Todo = require("./schema");
 const connectDB = require("./db");
-
+const cors = require("cors")
 const app = express();
 
 app.use(express.json())
+app.use(cors({
+    origin: "http://localhost:5173"
+}));
 
 connectDB();
 
@@ -37,6 +40,12 @@ app.post("/todo", async function(req, res){
     })
 });
 
+app.get("/todo", async function(req, res){
+    const todos = await todo.find({});
+    res.json({
+        todos
+    })
+})
 
 // Update a todo
 app.put("/todo", async function(req, res){
