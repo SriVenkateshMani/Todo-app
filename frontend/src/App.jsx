@@ -5,9 +5,12 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import { CreateTodo } from './components/CreateTodo.jsx'
 import { Todos } from './components/Todos.jsx'
+import axios
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState([])
+
+  
 
   return (
     <div>
@@ -25,7 +28,7 @@ function App() {
         }
       ]}/>
     </div>
-  )  
+  )   
 } 
 
 export default App; 
