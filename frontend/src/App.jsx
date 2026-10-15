@@ -5,28 +5,14 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import { CreateTodo } from './components/CreateTodo.jsx'
 import { Todos } from './components/Todos.jsx'
-import axios
+import axios from "axios";
 
 function App() {
-  const [count, setCount] = useState([])
-
-  
-
+  const [todos, setTodos] = useState([])
   return (
     <div>
       <CreateTodo/>
-      <Todos todos = {[
-        {
-          title: "Code react",
-          description: "Complete components, state, todoApp",
-          completed: false
-        },
-        {
-          title: "Code FastAPI",
-          description: "Complete Langgraph, state, RAG",
-          completed: true
-        }
-      ]}/>
+      <Todos todos = {todos}/>
     </div>
   )   
 } 

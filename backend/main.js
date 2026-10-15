@@ -41,7 +41,7 @@ app.post("/todo", async function(req, res){
 });
 
 app.get("/todo", async function(req, res){
-    const todos = await todo.find({});
+    const todos = await Todo.find({});
     res.json({
         todos
     })
